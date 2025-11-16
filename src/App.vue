@@ -1,12 +1,12 @@
 <script setup lang="ts">
-
+import Home from "./views/Home.vue";
+import Header from "./components/layout/Header.vue";
 </script>
 
 <template>
-  <div class="w-full flex items-center justify-center bg-gray-800">
-    <h1 class="text-24px font-bold text-green-400">
-      Hello UnoCSS!
-    </h1>
+  <div class="px-6 md:px-12 lg:px-24" id="font-sans">
+    <Header/>
+    <Home/>
   </div>
 </template>
 

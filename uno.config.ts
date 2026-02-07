@@ -1,26 +1,33 @@
-import { defineConfig } from 'unocss'
-import { presetWind4 } from '@unocss/preset-wind4'
+import {defineConfig} from 'unocss'
+import {presetWind4} from '@unocss/preset-wind4'
+import {presetWebFonts} from "unocss";
 
 export default defineConfig({
     presets: [
         presetWind4(),
+        presetWebFonts({
+            provider: 'google',
+            fonts: {
+                sans: 'Inter:300,400,500,700',
+
+                mono: 'Space Mono:400,700',
+
+                display: [
+                    {
+                        name: 'Fraunces',
+                        provider: 'none',
+                    },
+                ],
+            },
+        }),
     ],
+    shortcuts: {
+        'layout-padding': 'px-6 md:px-12',
+
+        'container-wrapper': 'w-full max-w-5xl mx-auto layout-padding',
+    },
     theme: {
-        font: {
-            sans: [
-                '-apple-system',
-                'BlinkMacSystemFont',
-                'Segoe UI',
-                'Roboto',
-                'Oxygen',
-                'Ubuntu',
-                'Cantarell',
-                'Fira Sans',
-                'Droid Sans',
-                'Helvetica Neue',
-                'sans-serif'
-            ].join(', ')
-        },
+
         colors: {
             // Brand colors
             primary: {
